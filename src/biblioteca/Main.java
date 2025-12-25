@@ -27,8 +27,6 @@ public class Main {
         biblioteca.adicionarLivro(livro2);
         biblioteca.adicionarLivro(livro3);
 
-        livro2.setDisponivel(false);
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("|| SEJA BEM VINDO AO SISTEMA DA LIVRARIA! ||");
@@ -37,6 +35,15 @@ public class Main {
 
         if (resposta.equalsIgnoreCase("SIM")) {
             biblioteca.listarLivrosDisponiveis();
+
+            System.out.println("Para realizar o empréstimo do Livro, insira o ID:");
+            int solicitarID = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("Insira seu nome para registro:");
+            String solicitarNome = scanner.nextLine();
+
+            biblioteca.realizarEmprestimo(solicitarID, solicitarNome);
+
             System.out.println("Até logo...");
         } else {
             System.out.println("Sem problemas! Até logo...");
