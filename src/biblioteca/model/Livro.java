@@ -7,7 +7,7 @@ public class Livro {
     private int id;
     private String titulo;
     private Autor autor;
-    private boolean disponivel  ;
+    private boolean disponivel;
     private LocalDate dataCadastro;
     private LocalDate dataAtualizacao;
 
@@ -20,12 +20,14 @@ public class Livro {
         this.dataAtualizacao = LocalDate.now();
     }
 
-    public int  getId() {
+    public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public String getTitulo() {
         return titulo;
     }
@@ -50,9 +52,13 @@ public class Livro {
         this.disponivel = disponivel;
     }
 
+    public LocalDate setDataAtualizacao(LocalDate dataAtualizacao) {
+        return this.dataAtualizacao = dataAtualizacao;
+    }
+
     @Override
     public String toString() {
-        return "Livro [ id= " + id + ", titulo= " + titulo + ", autor= " + autor + ", disponivel= "+ disponivel + " Data Cadastro= " + dataCadastro + " ]";
+        return "Livro [ id= " + id + ", titulo= " + titulo + ", autor= " + autor + ", disponivel= " + disponivel + " Data Cadastro= " + dataCadastro + " ]";
     }
 
 }
