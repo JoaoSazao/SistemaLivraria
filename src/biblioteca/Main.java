@@ -18,6 +18,7 @@ public class Main {
 
         biblioteca.adicionarAutor(autor1);
         biblioteca.adicionarAutor(autor2);
+        biblioteca.adicionarAutor(autor3);
 
         Livro livro1 = new Livro(1, "Java Básico", autor1);
         Livro livro2 = new Livro(2, "Um time show de Bola do Baska", autor2);
@@ -37,12 +38,29 @@ public class Main {
             biblioteca.listarLivrosDisponiveis();
 
             System.out.println("Para realizar o empréstimo do Livro, insira o ID:");
-            int solicitarID = Integer.parseInt(scanner.nextLine());
+
+            int solicitarID;
+
+            try {
+                solicitarID = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("ID Inválido, encerrando o sistema...");
+                scanner.close();
+                return;
+            }
 
             System.out.println("Insira seu nome para registro:");
             String solicitarNome = scanner.nextLine();
 
+            if (solicitarNome.isBlank()) {
+                System.out.println("Nome inválido. Encerrando o sistema.");
+                scanner.close();
+                return;
+            }
+
             biblioteca.realizarEmprestimo(solicitarID, solicitarNome);
+
+            biblioteca.listarLivrosDisponiveis();
 
             System.out.println("Até logo...");
         } else {

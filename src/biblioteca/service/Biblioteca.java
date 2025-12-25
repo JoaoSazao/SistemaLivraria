@@ -40,10 +40,18 @@ public class Biblioteca {
     ;
 
     public void listarLivrosDisponiveis() {
+
+        boolean encontrou = false;
+
         for (Livro livro : livros) {
             if (livro.isDisponivel()) {
                 System.out.println(livro);
+                encontrou = true;
             }
+        }
+
+        if (!encontrou) {
+            System.out.println("Não há livros disponíveis no momento.");
         }
     }
 
