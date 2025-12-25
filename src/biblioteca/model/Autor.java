@@ -1,7 +1,5 @@
 package biblioteca.model;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.time.LocalDate;
 
 public class Autor {
